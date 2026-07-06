@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="test.css">
+    <!-- <link rel="stylesheet" href="../static/test.css"> -->
+
+    <link rel="icon" href="data:,">
+    <title>Moodle学習支援センター - サインイン -</title>
+</head>
+
+<body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const togglePassword = document.getElementById("togglePassword");
+            const password = document.getElementById("password");
+
+            const startBtn = document.getElementById("startBtn");
+            const radioButtons = document.querySelectorAll("input[name='grade']");
+            const usernameInput = document.querySelectorAll(".Form-Item-Input")[0];
+            const passwordInput = document.querySelectorAll(".Form-Item-Input")[1];
+            const policyCheck = document.querySelector(".checkboxItem input");
+
+            // パスワード表示切替
+            togglePassword.addEventListener("click", function () {
+                const isPassword = password.type === "password";
+                password.type = isPassword ? "text" : "password";
+                this.classList.toggle("closed");
+            });
+
+            function validateForm() {
+                const gradeSelected = [...radioButtons].some(r => r.checked);
+                const testSelected = document.querySelectorAll("#dropdown input[name='testname']:checked").length > 0;
+                const usernameFilled = usernameInput.value.trim() !== "";
+                const passwordFilled = passwordInput.value.trim() !== "";
+                const policyChecked = policyCheck.checked;
+
+                const allValid = gradeSelected && testSelected && usernameFilled && passwordFilled && policyChecked;
+
+                startBtn.disabled = !allValid;
+            }
+
+            radioButtons.forEach(r => r.addEventListener("change", validateForm));
+            document.querySelectorAll("#dropdown input").forEach(cb => cb.addEventListener("change", validateForm));
+            usernameInput.addEventListener("input", validateForm);
+            passwordInput.addEventListener("input", validateForm);
+            policyCheck.addEventListener("change", validateForm);
+
+            validateForm();
+
+            // startBtn allows native submit when not disabled
+        });
+    </script>
+
+    <header>
+        <a class="logo" href="/">Moodle学習支援センター</a>
+        <div class="row">
+            <a href="/term" class="menu">利用規約</a>
+            <a href="/policy" class="menu">プライバシーポリシー</a>
+            <a href="/help" class="menu">ヘルプ</a>
+        </div>
+    </header>
+
+    <main>
+        <form class="content" method="POST" action="/run" id="testForm">
+        <h1 style="text-align: center; margin-bottom: 40px; color: var(--text-main);">サインイン</h1>
+
+            <div class="stepper">
+                <div class="step current">
+                    <div class="circle"></div>
+                    <div class="label">送信</div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="step">
+                    <div class="circle"></div>
+                    <div class="label">入力</div>
+                </div>
+            </div>
+
+            <div class="note" style="margin-bottom: 30px;">
+                学校メールアドレスを入力してワンタイムパスワードを受け取ります
+            </div>
+
+            <div class="Form-Item">
+                <p class="Form-Item-Label">
+                    <span class="Form-Item-Label-Required">必須</span>メールアドレス
+                </p>
+                <input type="text" name="username" class="Form-Item-Input" placeholder="例: example@school.com" />
+            </div>
+
+            <label class="checkboxItem">
+                <input type="checkbox" name="policy_agree" value="選択肢1" class="checkbox" checked />
+                プライバシーポリシーに同意する
+            </label>
+
+            <div class="button-wrapper">
+                <button type="submit" class="Form-Btn" id="startBtn">
+                    メール送信
+                </button>
+            </div>
+
+        </form>
+        
+        <script>
+            document.getElementById("testForm").addEventListener("submit", async function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+
+                const payload = {
+                    grade: formData.get("grade"),
+                    testname: formData.getAll("testname"),
+                    username: formData.get("username"),
+                    password: formData.get("password")
+                };
+
+                console.log("送信データ:", payload);
+
+                try {
+                    const res = await fetch("https://my-worker.syousei-syousei-06-25.workers.dev/api", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    console.log("レスポンス受信");
+
+                    const data = await res.json();
+                    console.log("data:", data);
+
+                    // 🔥 statusで分岐
+                    if (data.status === "loading") {
+                        location.href = "/load.html?username=" + payload.username;
+                    } 
+                    else if (data.status === "congestion") {
+                        location.href = "/congestion.html";
+                    } 
+                    else if (data.status === "free") {
+                        location.href = "/free.html";
+                    } 
+                    else {
+                        location.href = "/error.html";
+                    }
+
+                } catch(e) {
+                    console.error(e);
+                    alert("通信エラー: " + e.message);
+                }
+            });
+        </script>
+    </main>
+
+    <footer>
+        <div class="row">
+            <a href="/term" class="menu">利用規約</a>
+            <a href="/policy" class="menu">プライバシーポリシー</a>
+            <a href="/help" class="menu">ヘルプ</a>
+            <p>(C) Elecitell 2026 ver2.0</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

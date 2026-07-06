@@ -1,0 +1,22 @@
+[
+    {
+        "word": "apple",
+        "meaning": "りんご",
+        "example": "I ate an apple for breakfast."
+    },
+    {
+        "word": "book",
+        "meaning": "本",
+        "example": "She is reading a book about history."
+    },
+    {
+        "word": "computer",
+        "meaning": "コンピュータ",
+        "example": "The computer is running a new program."
+    },
+    {
+        "word": "library",
+        "meaning": "図書館",
+        "example": "We visited the library after school."
+    }
+]
