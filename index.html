@@ -28,7 +28,9 @@
     <main>
         <div class="content">
             <h1 style="text-align: center; margin-bottom: 24px; color: var(--text-main);">英単語一覧</h1>
-
+            <div>
+                <div class="table-wrapper">
+                    <table class="word-table">
                         <thead>
                             <tr>
                                 <th>English</th>
@@ -74,14 +76,10 @@
                     const wordCell = document.createElement('td');
                     const meaningCell = document.createElement('td');
                     const exampleCell = document.createElement('td');
-                    const wordInline = document.createElement('div');
-                    const wordText = document.createElement('span');
                     const revealBtn = document.createElement('button');
                     const answerText = document.createElement('span');
 
-                    wordInline.className = 'word-inline';
-                    wordText.className = 'word-text';
-                    wordText.textContent = item.word || '';
+                    wordCell.textContent = item.word || '';
 
                     revealBtn.className = 'reveal-btn';
                     revealBtn.type = 'button';
@@ -91,14 +89,12 @@
                     answerText.textContent = item.meaning || 'なし';
 
                     revealBtn.addEventListener('click', () => {
-                        const isVisible = answerText.classList.toggle('visible-answer');
-                        answerText.classList.toggle('hidden-answer', !isVisible);
-                        revealBtn.textContent = isVisible ? '答えを隠す' : '答えを見る';
+                        answerText.classList.add('visible-answer');
+                        answerText.classList.remove('hidden-answer');
+                        revealBtn.disabled = true;
                     });
 
-                    wordInline.appendChild(wordText);
-                    wordInline.appendChild(revealBtn);
-                    wordCell.appendChild(wordInline);
+                    meaningCell.appendChild(revealBtn);
                     meaningCell.appendChild(answerText);
                     exampleCell.textContent = item.example || '';
 
