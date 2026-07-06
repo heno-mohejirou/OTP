@@ -1,22 +1,327 @@
 [
-    {
-        "word": "apple",
-        "meaning": "りんご",
-        "example": "I ate an apple for breakfast."
-    },
-    {
-        "word": "book",
-        "meaning": "本",
-        "example": "She is reading a book about history."
-    },
-    {
-        "word": "computer",
-        "meaning": "コンピュータ",
-        "example": "The computer is running a new program."
-    },
-    {
-        "word": "library",
-        "meaning": "図書館",
-        "example": "We visited the library after school."
-    }
+  {
+    "word": "negligence",
+    "meaning": "怠慢",
+    "example": "The accident was caused by negligence."
+  },
+  {
+    "word": "vocational",
+    "meaning": "職業の",
+    "example": "She attends a vocational school."
+  },
+  {
+    "word": "reserve",
+    "meaning": "予約する",
+    "example": "I would like to reserve a table for two."
+  },
+  {
+    "word": "executive",
+    "meaning": "重役",
+    "example": "The executive made an important decision."
+  },
+  {
+    "word": "announce",
+    "meaning": "お知らせする",
+    "example": "The company will announce the results tomorrow."
+  },
+  {
+    "word": "tremendous",
+    "meaning": "とてつもなく大きい",
+    "example": "The team achieved tremendous success."
+  },
+  {
+    "word": "previous",
+    "meaning": "前の",
+    "example": "Please refer to the previous page."
+  },
+  {
+    "word": "by",
+    "meaning": "〜までに",
+    "example": "Please finish the report by Friday."
+  },
+  {
+    "word": "status",
+    "meaning": "状況",
+    "example": "You can check your order status online."
+  },
+  {
+    "word": "instrument",
+    "meaning": "楽器",
+    "example": "She can play several musical instruments."
+  },
+  {
+    "word": "industrialize",
+    "meaning": "工業化する",
+    "example": "The country began to industrialize rapidly."
+  },
+  {
+    "word": "composition",
+    "meaning": "作曲",
+    "example": "His latest composition became very popular."
+  },
+  {
+    "word": "investment",
+    "meaning": "投資",
+    "example": "Real estate is a good investment."
+  },
+  {
+    "word": "versatile",
+    "meaning": "用途の広い",
+    "example": "This tool is versatile and easy to use."
+  },
+  {
+    "word": "acclaimed",
+    "meaning": "定評のある",
+    "example": "She is an acclaimed author."
+  },
+  {
+    "word": "supervisor",
+    "meaning": "監督者",
+    "example": "Ask your supervisor for approval."
+  },
+  {
+    "word": "throughout",
+    "meaning": "〜を通してずっと",
+    "example": "It rained throughout the day."
+  },
+  {
+    "word": "participate",
+    "meaning": "参加する",
+    "example": "Many students participated in the event."
+  },
+  {
+    "word": "regularly",
+    "meaning": "定期的に",
+    "example": "She exercises regularly."
+  },
+  {
+    "word": "conference",
+    "meaning": "会議",
+    "example": "The conference starts at 9 a.m."
+  },
+  {
+    "word": "suitable",
+    "meaning": "適している",
+    "example": "This dress is suitable for the occasion."
+  },
+  {
+    "word": "based on",
+    "meaning": "〜に基づいて",
+    "example": "The decision was based on the evidence."
+  },
+  {
+    "word": "critically",
+    "meaning": "批判的に",
+    "example": "The issue was examined critically."
+  },
+  {
+    "word": "referential",
+    "meaning": "参照用の",
+    "example": "This book is mainly referential."
+  },
+  {
+    "word": "volatile",
+    "meaning": "不安定な",
+    "example": "The stock market is highly volatile."
+  },
+  {
+    "word": "prevention",
+    "meaning": "防止",
+    "example": "Prevention is better than cure."
+  },
+  {
+    "word": "against",
+    "meaning": "〜に対して",
+    "example": "The ladder was leaning against the wall."
+  },
+  {
+    "word": "accurate",
+    "meaning": "正確な",
+    "example": "The information is accurate."
+  },
+  {
+    "word": "preach",
+    "meaning": "説き勧める",
+    "example": "The teacher preached the importance of honesty."
+  },
+  {
+    "word": "automatically",
+    "meaning": "自動的に",
+    "example": "The door closes automatically."
+  },
+  {
+    "word": "frequent",
+    "meaning": "頻繁な",
+    "example": "He makes frequent business trips."
+  },
+  {
+    "word": "approximately",
+    "meaning": "おおよそ",
+    "example": "The meeting lasted approximately two hours."
+  },
+  {
+    "word": "artificial",
+    "meaning": "人工的な",
+    "example": "The flowers are artificial."
+  },
+  {
+    "word": "obsessive",
+    "meaning": "脅迫的な",
+    "example": "He has an obsessive interest in details."
+  },
+  {
+    "word": "defective",
+    "meaning": "欠陥がある",
+    "example": "The customer returned the defective product."
+  },
+  {
+    "word": "career",
+    "meaning": "仕事",
+    "example": "She has a successful career in medicine."
+  },
+  {
+    "word": "local",
+    "meaning": "地元の",
+    "example": "We bought fresh vegetables from a local market."
+  },
+  {
+    "word": "quit",
+    "meaning": "辞める",
+    "example": "He decided to quit his job."
+  },
+  {
+    "word": "apprentice",
+    "meaning": "見習いをする",
+    "example": "She worked as an apprentice for two years."
+  },
+  {
+    "word": "enthusiastically",
+    "meaning": "熱心に",
+    "example": "The students enthusiastically joined the activity."
+  },
+  {
+    "word": "the rest",
+    "meaning": "残り",
+    "example": "I'll finish the rest tomorrow."
+  },
+  {
+    "word": "obtain",
+    "meaning": "手に入れる",
+    "example": "You need a permit to obtain this license."
+  },
+  {
+    "word": "candidate",
+    "meaning": "候補者",
+    "example": "Each candidate gave a speech."
+  },
+  {
+    "word": "domestic",
+    "meaning": "国内の",
+    "example": "Domestic flights are cheaper."
+  },
+  {
+    "word": "thus",
+    "meaning": "したがって",
+    "example": "The roads were icy; thus, many flights were delayed."
+  },
+  {
+    "word": "outstanding",
+    "meaning": "ずば抜けている",
+    "example": "She did an outstanding job."
+  },
+  {
+    "word": "incredibly",
+    "meaning": "信じられないほど",
+    "example": "The movie was incredibly exciting."
+  },
+  {
+    "word": "award",
+    "meaning": "賞を与える",
+    "example": "The committee will award the prize next week."
+  },
+  {
+    "word": "profit",
+    "meaning": "利益",
+    "example": "The company made a large profit this year."
+  },
+  {
+    "word": "replacement",
+    "meaning": "取り替え",
+    "example": "The replacement arrived yesterday."
+  },
+  {
+    "word": "exclusive",
+    "meaning": "独占的な",
+    "example": "This offer is exclusive to members."
+  },
+  {
+    "word": "proposal",
+    "meaning": "提案",
+    "example": "The manager approved the proposal."
+  },
+  {
+    "word": "branch",
+    "meaning": "支所",
+    "example": "Our company opened a new branch."
+  },
+  {
+    "word": "university",
+    "meaning": "大学",
+    "example": "She studies engineering at a university."
+  },
+  {
+    "word": "acceptable",
+    "meaning": "受け入れられる",
+    "example": "Your explanation is acceptable."
+  },
+  {
+    "word": "efficient",
+    "meaning": "効率的な",
+    "example": "This machine is very efficient."
+  },
+  {
+    "word": "punctual",
+    "meaning": "時間通りの",
+    "example": "He is always punctual for meetings."
+  },
+  {
+    "word": "capable",
+    "meaning": "有能な",
+    "example": "She is capable of solving difficult problems."
+  },
+  {
+    "word": "board",
+    "meaning": "委員会",
+    "example": "The board approved the budget."
+  },
+  {
+    "word": "simultaneous",
+    "meaning": "同時に起こる",
+    "example": "The two events happened simultaneously."
+  },
+  {
+    "word": "select",
+    "meaning": "選ぶ",
+    "example": "Please select your preferred option."
+  },
+  {
+    "word": "recommend",
+    "meaning": "おすすめする",
+    "example": "I recommend this restaurant."
+  },
+  {
+    "word": "appointment",
+    "meaning": "予約",
+    "example": "I have a doctor's appointment tomorrow."
+  },
+  {
+    "word": "renovation",
+    "meaning": "改修",
+    "example": "The building is under renovation."
+  },
+  {
+    "word": "another",
+    "meaning": "もう一つの",
+    "example": "Could you give me another chance?"
+  }
 ]
